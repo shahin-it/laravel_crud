@@ -16,16 +16,13 @@ Route::get('/', function () {
 });
 
 Route::get('/{controller}', function($controller) {
-    $ctr = app()->make('\App\Http\Controllers\\'.ucfirst($controller).'Controller');
-    return $ctr->callAction("index", array());
+    return forward($controller);
 });
 
 Route::get('{controller}/{action}', function($controller, $action = 'index') {
-    $ctr = app()->make('\App\Http\Controllers\\'.ucfirst($controller).'Controller');
-    return $ctr->callAction($action, array());
+    return forward($controller, $action);
 });
 
 Route::get('{controller}/{action}/{id}', function($controller, $action = 'index', $id = null) {
-    $ctr = app()->make('\App\Http\Controllers\\'.ucfirst($controller).'Controller');
-    return $ctr->callAction($action, array('id'=> $id));
+    return forward($controller, $action, array('id'=> $id));
 });
