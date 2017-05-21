@@ -24,5 +24,5 @@ Route::get('{controller}/{action}', function($controller, $action = 'index') {
 });
 
 Route::get('{controller}/{action}/{id}', function($controller, $action = 'index', $id = null) {
-    return forward($controller, $action, array('id'=> $id));
+    return forward($controller, $action, array($id));
 });

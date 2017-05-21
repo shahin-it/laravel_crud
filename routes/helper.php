@@ -7,5 +7,6 @@
  */
 function forward($controller = '/', $action = 'index', $params = array()) {
     $ctr = app()->make('\App\Http\Controllers\\'.ucfirst($controller).'Controller');
+    $request = \Illuminate\Http\Request::capture();
     return $ctr->callAction($action, $params);
 }
