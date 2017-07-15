@@ -6,7 +6,7 @@
  * Time: 9:53 PM
  */
 
-namespace app\utils;
+namespace App\Utils;
 
 
 class DbUtil

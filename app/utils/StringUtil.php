@@ -6,7 +6,7 @@
  * Time: 9:52 PM
  */
 
-namespace app\utils;
+namespace App\Utils;
 
 
 class StringUtil
