@@ -13,6 +13,9 @@ class CreateCustomersTable extends Migration
      */
     public function up()
     {
+        if (Schema::hasTable('customers')) {
+            return;
+        }
         Schema::create('customers', function (Blueprint $table) {
             $table->increments('id');
             $table->string("first_name");
